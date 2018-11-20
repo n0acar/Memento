@@ -12,6 +12,7 @@
 		D9D9DC8D21A4522900ED7D01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9D9DC8B21A4522900ED7D01 /* Main.storyboard */; };
 		D9D9DC8F21A4522B00ED7D01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9D9DC8E21A4522B00ED7D01 /* Assets.xcassets */; };
 		D9D9DC9221A4522B00ED7D01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9D9DC9021A4522B00ED7D01 /* LaunchScreen.storyboard */; };
+		D9D9DC9B21A469A700ED7D01 /* MainPageTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D9DC9A21A469A700ED7D01 /* MainPageTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		D9D9DC8E21A4522B00ED7D01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D9D9DC9121A4522B00ED7D01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D9D9DC9321A4522B00ED7D01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9D9DC9A21A469A700ED7D01 /* MainPageTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		D9D9DC8621A4522900ED7D01 /* Memento */ = {
 			isa = PBXGroup;
 			children = (
+				D9D9DC9921A467F900ED7D01 /* TabBarControllers */,
 				D9D9DC8721A4522900ED7D01 /* AppDelegate.swift */,
 				D9D9DC8921A4522900ED7D01 /* ViewController.swift */,
 				D9D9DC8B21A4522900ED7D01 /* Main.storyboard */,
@@ -62,6 +65,14 @@
 				D9D9DC9321A4522B00ED7D01 /* Info.plist */,
 			);
 			path = Memento;
+			sourceTree = "<group>";
+		};
+		D9D9DC9921A467F900ED7D01 /* TabBarControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D9D9DC9A21A469A700ED7D01 /* MainPageTabBarController.swift */,
+			);
+			path = TabBarControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9D9DC9B21A469A700ED7D01 /* MainPageTabBarController.swift in Sources */,
 				D9D9DC8A21A4522900ED7D01 /* ViewController.swift in Sources */,
 				D9D9DC8821A4522900ED7D01 /* AppDelegate.swift in Sources */,
 			);
