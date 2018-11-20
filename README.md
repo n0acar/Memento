@@ -1,2 +1,3 @@
 # Memento
-COMP 319 - Final Project
+
+Memento is designed and implemented by Nevzat Acar and Berk Gökçayoğlu.
