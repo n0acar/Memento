@@ -1,22 +1,22 @@
 //
-//  MainPageTabBarController.swift
+//  StartingPageViewController.swift
 //  Memento
 //
-//  Created by Nevzat Acar on 20.11.2018.
+//  Created by Nevzat Acar on 5.12.2018.
 //  Copyright © 2018 Brothers. All rights reserved.
 //
 
 import UIKit
-import SwipeableTabBarController
-class MainPageTabBarController: SwipeableTabBarController {
+
+class StartingPageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.selectedIndex = 1
+
         // Do any additional setup after loading the view.
     }
     
-    
+
     /*
     // MARK: - Navigation
 

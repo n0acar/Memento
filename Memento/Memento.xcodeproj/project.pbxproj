@@ -7,20 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C36D834D008C8352438A9A02 /* Pods_Memento.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA7FC780BFF6C7979C58E022 /* Pods_Memento.framework */; };
+		D9D141A721B6ED4A00A9F71C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9D141A621B6ED4A00A9F71C /* Assets.xcassets */; };
+		D9D141A921B7299B00A9F71C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D141A821B7299B00A9F71C /* LoginViewController.swift */; };
+		D9D141AC21B72A5E00A9F71C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D141AB21B72A5E00A9F71C /* SignUpViewController.swift */; };
+		D9D141AF21B72ABD00A9F71C /* StartingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D141AE21B72ABD00A9F71C /* StartingPageViewController.swift */; };
 		D9D9DC8821A4522900ED7D01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D9DC8721A4522900ED7D01 /* AppDelegate.swift */; };
 		D9D9DC8A21A4522900ED7D01 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D9DC8921A4522900ED7D01 /* ViewController.swift */; };
 		D9D9DC8D21A4522900ED7D01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9D9DC8B21A4522900ED7D01 /* Main.storyboard */; };
-		D9D9DC8F21A4522B00ED7D01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9D9DC8E21A4522B00ED7D01 /* Assets.xcassets */; };
 		D9D9DC9221A4522B00ED7D01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9D9DC9021A4522B00ED7D01 /* LaunchScreen.storyboard */; };
 		D9D9DC9B21A469A700ED7D01 /* MainPageTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D9DC9A21A469A700ED7D01 /* MainPageTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F7258168D67FECE98B0FE28 /* Pods-Memento.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Memento.release.xcconfig"; path = "Pods/Target Support Files/Pods-Memento/Pods-Memento.release.xcconfig"; sourceTree = "<group>"; };
+		5E61734F26103A665159BB21 /* Pods-Memento.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Memento.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Memento/Pods-Memento.debug.xcconfig"; sourceTree = "<group>"; };
+		CA7FC780BFF6C7979C58E022 /* Pods_Memento.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Memento.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9D141A621B6ED4A00A9F71C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Memento/Assets.xcassets; sourceTree = SOURCE_ROOT; };
+		D9D141A821B7299B00A9F71C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D9D141AB21B72A5E00A9F71C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		D9D141AE21B72ABD00A9F71C /* StartingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingPageViewController.swift; sourceTree = "<group>"; };
 		D9D9DC8421A4522900ED7D01 /* Memento.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memento.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9D9DC8721A4522900ED7D01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9D9DC8921A4522900ED7D01 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D9D9DC8C21A4522900ED7D01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D9D9DC8E21A4522B00ED7D01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D9D9DC9121A4522B00ED7D01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D9D9DC9321A4522B00ED7D01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9D9DC9A21A469A700ED7D01 /* MainPageTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageTabBarController.swift; sourceTree = "<group>"; };
@@ -31,17 +41,54 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C36D834D008C8352438A9A02 /* Pods_Memento.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D3D7EAB6B7B45EE00634747 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5E61734F26103A665159BB21 /* Pods-Memento.debug.xcconfig */,
+				1F7258168D67FECE98B0FE28 /* Pods-Memento.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D5806842FB32CEEEFEA3D7E3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CA7FC780BFF6C7979C58E022 /* Pods_Memento.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D9D141AA21B72A1B00A9F71C /* UserControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D9D141A821B7299B00A9F71C /* LoginViewController.swift */,
+				D9D141AB21B72A5E00A9F71C /* SignUpViewController.swift */,
+			);
+			path = UserControllers;
+			sourceTree = "<group>";
+		};
+		D9D141AD21B72A8B00A9F71C /* StartingPageController */ = {
+			isa = PBXGroup;
+			children = (
+				D9D141AE21B72ABD00A9F71C /* StartingPageViewController.swift */,
+			);
+			path = StartingPageController;
+			sourceTree = "<group>";
+		};
 		D9D9DC7B21A4522900ED7D01 = {
 			isa = PBXGroup;
 			children = (
 				D9D9DC8621A4522900ED7D01 /* Memento */,
 				D9D9DC8521A4522900ED7D01 /* Products */,
+				3D3D7EAB6B7B45EE00634747 /* Pods */,
+				D5806842FB32CEEEFEA3D7E3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,11 +103,13 @@
 		D9D9DC8621A4522900ED7D01 /* Memento */ = {
 			isa = PBXGroup;
 			children = (
+				D9D141AD21B72A8B00A9F71C /* StartingPageController */,
+				D9D141AA21B72A1B00A9F71C /* UserControllers */,
 				D9D9DC9921A467F900ED7D01 /* TabBarControllers */,
 				D9D9DC8721A4522900ED7D01 /* AppDelegate.swift */,
+				D9D141A621B6ED4A00A9F71C /* Assets.xcassets */,
 				D9D9DC8921A4522900ED7D01 /* ViewController.swift */,
 				D9D9DC8B21A4522900ED7D01 /* Main.storyboard */,
-				D9D9DC8E21A4522B00ED7D01 /* Assets.xcassets */,
 				D9D9DC9021A4522B00ED7D01 /* LaunchScreen.storyboard */,
 				D9D9DC9321A4522B00ED7D01 /* Info.plist */,
 			);
@@ -82,9 +131,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D9D9DC9621A4522B00ED7D01 /* Build configuration list for PBXNativeTarget "Memento" */;
 			buildPhases = (
+				369A918F026B9A28A790076B /* [CP] Check Pods Manifest.lock */,
 				D9D9DC8021A4522900ED7D01 /* Sources */,
 				D9D9DC8121A4522900ED7D01 /* Frameworks */,
 				D9D9DC8221A4522900ED7D01 /* Resources */,
+				223BC96C8A3FAFB24145D879 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -134,21 +185,63 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9D9DC9221A4522B00ED7D01 /* LaunchScreen.storyboard in Resources */,
-				D9D9DC8F21A4522B00ED7D01 /* Assets.xcassets in Resources */,
+				D9D141A721B6ED4A00A9F71C /* Assets.xcassets in Resources */,
 				D9D9DC8D21A4522900ED7D01 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		223BC96C8A3FAFB24145D879 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Memento/Pods-Memento-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwipeableTabBarController/SwipeableTabBarController.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeableTabBarController.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Memento/Pods-Memento-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		369A918F026B9A28A790076B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Memento-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D9D9DC8021A4522900ED7D01 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9D141A921B7299B00A9F71C /* LoginViewController.swift in Sources */,
 				D9D9DC9B21A469A700ED7D01 /* MainPageTabBarController.swift in Sources */,
+				D9D141AF21B72ABD00A9F71C /* StartingPageViewController.swift in Sources */,
 				D9D9DC8A21A4522900ED7D01 /* ViewController.swift in Sources */,
 				D9D9DC8821A4522900ED7D01 /* AppDelegate.swift in Sources */,
+				D9D141AC21B72A5E00A9F71C /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +385,7 @@
 		};
 		D9D9DC9721A4522B00ED7D01 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E61734F26103A665159BB21 /* Pods-Memento.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -310,6 +404,7 @@
 		};
 		D9D9DC9821A4522B00ED7D01 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F7258168D67FECE98B0FE28 /* Pods-Memento.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
