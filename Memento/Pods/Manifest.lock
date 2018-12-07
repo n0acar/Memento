@@ -1,16 +1,26 @@
 PODS:
+  - Bolts/Tasks (1.9.0)
+  - Parse (1.17.1):
+    - Parse/Core (= 1.17.1)
+  - Parse/Core (1.17.1):
+    - Bolts/Tasks (~> 1.9)
   - SwipeableTabBarController (1.2.2)
 
 DEPENDENCIES:
+  - Parse
   - SwipeableTabBarController
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Bolts
+    - Parse
     - SwipeableTabBarController
 
 SPEC CHECKSUMS:
+  Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
+  Parse: d3edaf8c7c722cb33cb83ba7821d015ae32d362d
   SwipeableTabBarController: 5f26a69e012995e7691a5ce4e3a692d1b497e539
 
-PODFILE CHECKSUM: 47d108ec9b642940ea6e9b8afaa1153eb42857ee
+PODFILE CHECKSUM: aebdcab91585cb65ba0149947994dc1dbc39ee3a
 
 COCOAPODS: 1.5.3

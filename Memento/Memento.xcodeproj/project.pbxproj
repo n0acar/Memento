@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		C36D834D008C8352438A9A02 /* Pods_Memento.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA7FC780BFF6C7979C58E022 /* Pods_Memento.framework */; };
+		D97C6C3C21BAF74B00B3813C /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97C6C3B21BAF74B00B3813C /* UserModel.swift */; };
 		D9D141A721B6ED4A00A9F71C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9D141A621B6ED4A00A9F71C /* Assets.xcassets */; };
 		D9D141A921B7299B00A9F71C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D141A821B7299B00A9F71C /* LoginViewController.swift */; };
 		D9D141AC21B72A5E00A9F71C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D141AB21B72A5E00A9F71C /* SignUpViewController.swift */; };
-		D9D141AF21B72ABD00A9F71C /* StartingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D141AE21B72ABD00A9F71C /* StartingPageViewController.swift */; };
 		D9D9DC8821A4522900ED7D01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D9DC8721A4522900ED7D01 /* AppDelegate.swift */; };
 		D9D9DC8A21A4522900ED7D01 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D9DC8921A4522900ED7D01 /* ViewController.swift */; };
 		D9D9DC8D21A4522900ED7D01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9D9DC8B21A4522900ED7D01 /* Main.storyboard */; };
@@ -23,10 +23,10 @@
 		1F7258168D67FECE98B0FE28 /* Pods-Memento.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Memento.release.xcconfig"; path = "Pods/Target Support Files/Pods-Memento/Pods-Memento.release.xcconfig"; sourceTree = "<group>"; };
 		5E61734F26103A665159BB21 /* Pods-Memento.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Memento.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Memento/Pods-Memento.debug.xcconfig"; sourceTree = "<group>"; };
 		CA7FC780BFF6C7979C58E022 /* Pods_Memento.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Memento.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D97C6C3B21BAF74B00B3813C /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		D9D141A621B6ED4A00A9F71C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Memento/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		D9D141A821B7299B00A9F71C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D9D141AB21B72A5E00A9F71C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		D9D141AE21B72ABD00A9F71C /* StartingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingPageViewController.swift; sourceTree = "<group>"; };
 		D9D9DC8421A4522900ED7D01 /* Memento.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memento.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9D9DC8721A4522900ED7D01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9D9DC8921A4522900ED7D01 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +65,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D97C6C3A21BAF72A00B3813C /* UserModel */ = {
+			isa = PBXGroup;
+			children = (
+				D97C6C3B21BAF74B00B3813C /* UserModel.swift */,
+			);
+			path = UserModel;
+			sourceTree = "<group>";
+		};
 		D9D141AA21B72A1B00A9F71C /* UserControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -72,14 +80,6 @@
 				D9D141AB21B72A5E00A9F71C /* SignUpViewController.swift */,
 			);
 			path = UserControllers;
-			sourceTree = "<group>";
-		};
-		D9D141AD21B72A8B00A9F71C /* StartingPageController */ = {
-			isa = PBXGroup;
-			children = (
-				D9D141AE21B72ABD00A9F71C /* StartingPageViewController.swift */,
-			);
-			path = StartingPageController;
 			sourceTree = "<group>";
 		};
 		D9D9DC7B21A4522900ED7D01 = {
@@ -103,7 +103,7 @@
 		D9D9DC8621A4522900ED7D01 /* Memento */ = {
 			isa = PBXGroup;
 			children = (
-				D9D141AD21B72A8B00A9F71C /* StartingPageController */,
+				D97C6C3A21BAF72A00B3813C /* UserModel */,
 				D9D141AA21B72A1B00A9F71C /* UserControllers */,
 				D9D9DC9921A467F900ED7D01 /* TabBarControllers */,
 				D9D9DC8721A4522900ED7D01 /* AppDelegate.swift */,
@@ -200,10 +200,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Memento/Pods-Memento-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
 				"${BUILT_PRODUCTS_DIR}/SwipeableTabBarController/SwipeableTabBarController.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeableTabBarController.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,9 +242,9 @@
 			files = (
 				D9D141A921B7299B00A9F71C /* LoginViewController.swift in Sources */,
 				D9D9DC9B21A469A700ED7D01 /* MainPageTabBarController.swift in Sources */,
-				D9D141AF21B72ABD00A9F71C /* StartingPageViewController.swift in Sources */,
 				D9D9DC8A21A4522900ED7D01 /* ViewController.swift in Sources */,
 				D9D9DC8821A4522900ED7D01 /* AppDelegate.swift in Sources */,
+				D97C6C3C21BAF74B00B3813C /* UserModel.swift in Sources */,
 				D9D141AC21B72A5E00A9F71C /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

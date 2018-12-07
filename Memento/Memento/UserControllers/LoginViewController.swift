@@ -9,24 +9,34 @@
 import UIKit
 import Parse
 
+//extension LoginViewController: NameModelDelegate {
+//}
+
 class LoginViewController: UIViewController {
 
     	
     @IBOutlet weak var UserNameText: UITextField!
     @IBOutlet weak var PasswordText: UITextField!
     
+    let userModel = UserModel()
+    
     override func viewDidLoad() {
-        
-        
-        
         super.viewDidLoad()
+        //userModel.delegate = self
 
         // Do any additional setup after loading the view.
     }
    
-    @IBAction func LoginButton(_ sender: Any) {
-    }
-    @IBAction func SignUpButton(_ sender: Any) {
+   
+    @IBAction func loginButton(_ sender: Any) {
+        if !(UserNameText.text == nil || PasswordText.text == nil){
+            userModel.login(username: UserNameText.text!, password: PasswordText.text!)
+            print("if")
+        }
+        else {
+            //must bedeclared
+            print("else")
+        }
     }
     
 
