@@ -25,6 +25,21 @@ class UserModel {
         }
     }
     
+    
+    func isLoggedIn () -> Bool {
+        let currentUser = PFUser.current()
+        if currentUser != nil {
+            print(currentUser!)
+            print("loggeddd")
+            return true
+        } else {
+            print("not logged in")
+            return false
+        }
+    }
+    
+    
+    
     func signIn(username: String, password: String) {
         let user = PFUser()
         user["username"] = username

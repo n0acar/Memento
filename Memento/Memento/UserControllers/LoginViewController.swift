@@ -26,6 +26,15 @@ class LoginViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if userModel.isLoggedIn() {
+            print("performm")
+            DispatchQueue.main.async(){
+                self.performSegue(withIdentifier: "loginToApp", sender: self)
+            }
+        }
+    }
    
    
     @IBAction func loginButton(_ sender: Any) {
