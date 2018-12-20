@@ -47,6 +47,9 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x6o-44-Lwp">
                                 <rect key="frame" x="16" y="411" width="343" height="30"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Z5E-W9-sn6"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -100,6 +103,7 @@
                             <constraint firstAttribute="bottom" secondItem="Zm0-Tj-iB6" secondAttribute="bottom" constant="187" id="Iir-Bl-9Ds"/>
                             <constraint firstItem="Zm0-Tj-iB6" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="d4p-yg-Glh" secondAttribute="trailing" constant="8" symbolic="YES" id="N6i-eZ-QOc"/>
                             <constraint firstItem="Zm0-Tj-iB6" firstAttribute="leading" secondItem="sTC-p4-Crc" secondAttribute="trailing" constant="-17" id="RPa-6x-57U"/>
+                            <constraint firstItem="SBb-gb-AWt" firstAttribute="top" secondItem="87C-N4-Ttv" secondAttribute="bottom" constant="16" id="VG3-7N-f6d"/>
                             <constraint firstItem="87C-N4-Ttv" firstAttribute="leading" secondItem="SBb-gb-AWt" secondAttribute="leading" id="Zaj-ok-aA6"/>
                             <constraint firstItem="ieL-gf-FxL" firstAttribute="trailing" secondItem="SBb-gb-AWt" secondAttribute="trailing" constant="16" id="Zdb-nq-6ih"/>
                             <constraint firstItem="sTC-p4-Crc" firstAttribute="centerX" secondItem="x6o-44-Lwp" secondAttribute="centerX" id="h2p-w1-ZxE"/>
@@ -109,6 +113,7 @@
                             <constraint firstItem="x6o-44-Lwp" firstAttribute="trailing" secondItem="IVt-Jz-606" secondAttribute="trailing" id="o8z-5Z-fag"/>
                             <constraint firstItem="x6o-44-Lwp" firstAttribute="top" secondItem="SBb-gb-AWt" secondAttribute="bottom" constant="8" id="qbX-C3-LaW"/>
                             <constraint firstItem="sTC-p4-Crc" firstAttribute="top" secondItem="Zm0-Tj-iB6" secondAttribute="bottom" constant="8" symbolic="YES" id="rHD-Tp-mAK"/>
+                            <constraint firstItem="IVt-Jz-606" firstAttribute="leading" secondItem="87C-N4-Ttv" secondAttribute="trailing" constant="214" id="tNs-V2-Qkw"/>
                             <constraint firstItem="x6o-44-Lwp" firstAttribute="centerX" secondItem="SBb-gb-AWt" secondAttribute="centerX" id="taq-SM-Ig5"/>
                             <constraint firstItem="IVt-Jz-606" firstAttribute="top" secondItem="ieL-gf-FxL" secondAttribute="top" id="zMj-bV-P1T"/>
                             <constraint firstItem="SBb-gb-AWt" firstAttribute="leading" secondItem="ieL-gf-FxL" secondAttribute="leading" constant="16" id="zlp-fS-DO3"/>
@@ -345,7 +350,7 @@
                                 <rect key="frame" x="16" y="403" width="343" height="30"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GqM-Mf-fFv">
                                 <rect key="frame" x="160.5" y="501" width="54" height="30"/>

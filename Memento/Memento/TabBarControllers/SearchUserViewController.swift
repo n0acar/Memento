@@ -28,6 +28,7 @@ class SearchUserViewController: UIViewController {
         super.viewDidLoad()
         searchModel.delegate = self
         print(searchModel.otherUserNotesArray)
+        self.hideKeyboardOnTap()
         // Do any additional setup after loading the view.
     }
     
@@ -52,6 +53,14 @@ class SearchUserViewController: UIViewController {
         searchModel.otherUserNotesArray = []
     }
     
+    public func hideKeyboardOnTap() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.hideKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    @objc public func hideKeyboard() {
+        view.endEditing(true)
+    }
     
     /*
     // MARK: - Navigation
