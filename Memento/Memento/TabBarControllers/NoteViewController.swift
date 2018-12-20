@@ -22,6 +22,7 @@ class NoteViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         // Do any additional setup after loading the view.
+        self.hideKeyboardOnTap()
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {
@@ -55,7 +56,14 @@ class NoteViewController: UIViewController {
         }
     }
     
-    
+    public func hideKeyboardOnTap() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.hideKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    @objc public func hideKeyboard() {
+        view.endEditing(true)
+    }
     
     /*
     // MARK: - Navigation
