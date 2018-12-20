@@ -9,7 +9,19 @@
 import Foundation
 import Parse
 
+//protocol ProfileModelDelegate {
+//    func noteListLoaded(noteList: [Note])
+//}
+
 class ProfileModel {
+    
+    //var delegate: ProfileModelDelegate?
+    
+    var notesArray : [Note] = []
+    
+    init () {
+        loadNotesForCurrentUser()
+    }
     
     let user = PFUser.current()!
     
@@ -26,9 +38,16 @@ class ProfileModel {
                 print("Successfully retrieved \(objects.count) scores.")
                 // Do something with the found objects
                 for object in objects {
-                    print(object.objectId as Any)
+                    if (object["noteText"] != nil &&
+                        object["hashtag"] != nil &&
+                    object["visibility"] != nil &&
+                    object["username"] != nil) {
+                        self.notesArray.append(Note(noteText: object["noteText"]! as! String, hashtag: object["hashtag"]! as! String, visibility: object["visibility"]! as! Bool, username: object["username"]! as! String))
+                    }
                 }
+//                self.delegate?.noteListLoaded(noteList: self.notesArray)
             }
         }
     }
+    
 }

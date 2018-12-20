@@ -15,16 +15,31 @@ import Parse
 class LoginViewController: UIViewController {
 
     	
+    @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var UserNameText: UITextField!
     @IBOutlet weak var PasswordText: UITextField!
     
+    @IBOutlet weak var logoTopConstraint: NSLayoutConstraint!
     let userModel = UserModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //userModel.delegate = self
-
-        // Do any additional setup after loading the view.
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= logoTopConstraint.constant
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,7 +54,7 @@ class LoginViewController: UIViewController {
    
     @IBAction func loginButton(_ sender: Any) {
         if !(UserNameText.text == nil || PasswordText.text == nil){
-            userModel.login(username: UserNameText.text!, password: PasswordText.text!)
+            self.login(username: UserNameText.text!, password: PasswordText.text!)
             print("if")
         }
         else {
@@ -47,6 +62,24 @@ class LoginViewController: UIViewController {
             print("else")
         }
     }
+    
+    func login(username: String, password: String){
+        PFUser.logInWithUsername(inBackground: username, password: password) { (user, error) in
+            if user != nil {
+                // Do stuff after successful login.
+                print("Logged")
+                DispatchQueue.main.async(){
+                self.performSegue(withIdentifier: "loginToApp", sender: self)
+                }
+            } else {
+                // The login failed. Check error to see why.
+                print(error as Any)
+                print("Not logged")
+            }
+        }
+    }
+    
+    
     
 
     /*

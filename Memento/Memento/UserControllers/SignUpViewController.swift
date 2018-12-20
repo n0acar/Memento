@@ -29,7 +29,7 @@ class SignUpViewController: UIViewController {
     }
     @IBAction func FinishButton(_ sender: Any) {
         if !(UsernameText.text == nil || PasswordText.text == nil){
-            userModel.signIn(username: UsernameText.text!, password: PasswordText.text!)
+            self.signIn(username: UsernameText.text!, password: PasswordText.text!)
             print("if")
         }
         else {
@@ -38,6 +38,24 @@ class SignUpViewController: UIViewController {
         }
     }
     
+    func signIn(username: String, password: String) {
+        let user = PFUser()
+        user["username"] = username
+        user["password"] = password
+        
+        user.signUpInBackground { (success, error) in
+            if let error = error {
+                let errorString = error._userInfo!["error"]
+                print(errorString as Any)
+                
+            }
+            else{
+                print("Sign In is Successful")
+                self.performSegue(withIdentifier: "signUpToApp", sender: self)
+            }
+        }
+        
+    }
 
     /*
     // MARK: - Navigation

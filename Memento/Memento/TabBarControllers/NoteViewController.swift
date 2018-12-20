@@ -16,6 +16,7 @@ class NoteViewController: UIViewController {
     @IBOutlet weak var noteArea: UITextView!
     @IBOutlet weak var hashtagLabel: UITextField!
     @IBOutlet weak var visibilitySwitch: UISwitch!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,26 +26,24 @@ class NoteViewController: UIViewController {
     @IBAction func saveNote(_ sender: Any) {
         if (noteArea.text != nil && hashtagLabel.text != nil) {
         noteModel.saveNote(noteText: noteArea.text!, hashtag: hashtagLabel.text!, visibility: visibilitySwitch.isOn)
+        //should be in domain saveNote after save is guaranteed(protocol)
+        noteArea.text = ""
+        hashtagLabel.text = ""
+        visibilitySwitch.setOn(true, animated: true)
+        
+        }
+    }
+    
+    @IBAction func logoutPressed(_ sender: Any) {
+        print("out")
+        noteModel.logOut()
+        DispatchQueue.main.async(){
+            self.performSegue(withIdentifier: "logoutFromApp", sender: self)
         }
     }
     
     
-    @IBAction func logoutButton(_ sender: Any) {
-        
-    }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        // Get the new view controller using segue.destination.
-//        // Pass the selected object to the new view controller.
-//        
-//        
-////        let cell = sender as! TopTenCityCollectionViewCell
-////        let indexPath = topTenCitiesCollectionView.indexPath(for: cell)
-////        let city = citiesDataSource.citiesArray[indexPath!.row]
-//        print("log out in view")
-//        noteModel.logOut()
-//        //let loginScreen = segue.destination as! LoginViewController
-//    }
     /*
     // MARK: - Navigation
 
