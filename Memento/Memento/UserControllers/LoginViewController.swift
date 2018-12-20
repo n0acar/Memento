@@ -13,8 +13,8 @@ import Parse
 //}
 
 class LoginViewController: UIViewController {
-
-    	
+    
+    
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var UserNameText: UITextField!
     @IBOutlet weak var PasswordText: UITextField!
@@ -29,10 +29,8 @@ class LoginViewController: UIViewController {
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y == 0 {
-                self.view.frame.origin.y -= logoTopConstraint.constant
-            }
+        if self.view.frame.origin.y == 0 {
+            self.view.frame.origin.y -= logoTopConstraint.constant
         }
     }
     
@@ -50,8 +48,8 @@ class LoginViewController: UIViewController {
             }
         }
     }
-   
-   
+    
+    
     @IBAction func loginButton(_ sender: Any) {
         if !(UserNameText.text == nil || PasswordText.text == nil){
             self.login(username: UserNameText.text!, password: PasswordText.text!)
@@ -69,7 +67,7 @@ class LoginViewController: UIViewController {
                 // Do stuff after successful login.
                 print("Logged")
                 DispatchQueue.main.async(){
-                self.performSegue(withIdentifier: "loginToApp", sender: self)
+                    self.performSegue(withIdentifier: "loginToApp", sender: self)
                 }
             } else {
                 // The login failed. Check error to see why.
@@ -81,15 +79,15 @@ class LoginViewController: UIViewController {
     
     
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
