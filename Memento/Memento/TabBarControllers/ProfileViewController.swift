@@ -22,7 +22,7 @@ extension ProfileViewController: UIScrollViewDelegate {
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         let finalYCoordinate = targetContentOffset.pointee.y
-        let cellHeight: CGFloat = 140
+        let cellHeight: CGFloat = 120
         var mode = finalYCoordinate.truncatingRemainder(dividingBy: cellHeight)
         if mode > cellHeight/2 {
             mode = -(cellHeight-mode)
@@ -92,7 +92,13 @@ extension ProfileViewController: UITableViewDataSource {
 //        return profileCell
 //    }
 //}
-
+extension ProfileViewController : ProfileModelDelegate {
+    func noteListLoaded() {
+        profileTableView.reloadData()
+    }
+    
+    
+}
 class ProfileViewController: UIViewController {
     
     let profileModel = ProfileModel()
@@ -104,14 +110,24 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         print("control")
         // Do any additional setup after loading the view.
-        //        profileModel.delegate = self
+        profileModel.delegate = self
+        profileTableView.tableFooterView = UIView()
+        self.hideKeyboardOnTap()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         //        profileModel.loadNotesForCurrentUser()
-        
+        profileModel.loadNotesForCurrentUser()
     }
     
+    public func hideKeyboardOnTap() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.hideKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    @objc public func hideKeyboard() {
+        view.endEditing(true)
+    }
     
     /*
      // MARK: - Navigation

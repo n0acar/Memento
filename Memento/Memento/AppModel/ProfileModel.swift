@@ -9,13 +9,13 @@
 import Foundation
 import Parse
 
-//protocol ProfileModelDelegate {
-//    func noteListLoaded(noteList: [Note])
-//}
+protocol ProfileModelDelegate {
+    func noteListLoaded()
+}
 
 class ProfileModel {
     
-    //var delegate: ProfileModelDelegate?
+    var delegate: ProfileModelDelegate?
     
     var notesArray : [Note] = []
     
@@ -35,6 +35,7 @@ class ProfileModel {
                 print("retrieve error")
             } else if let objects = objects {
                 // The find succeeded.
+                self.notesArray = []
                 print("Successfully retrieved \(objects.count) scores.")
                 // Do something with the found objects
                 for object in objects {
@@ -45,7 +46,7 @@ class ProfileModel {
                         self.notesArray.append(Note(noteText: object["noteText"]! as! String, hashtag: object["hashtag"]! as! String, visibility: object["visibility"]! as! Bool, username: object["username"]! as! String))
                     }
                 }
-//                self.delegate?.noteListLoaded(noteList: self.notesArray)
+                self.delegate?.noteListLoaded()
             }
         }
     }

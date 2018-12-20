@@ -12,7 +12,7 @@ extension DetailedUserViewController: UIScrollViewDelegate {
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         let finalYCoordinate = targetContentOffset.pointee.y
-        let cellHeight: CGFloat = 140
+        let cellHeight: CGFloat = 120
         var mode = finalYCoordinate.truncatingRemainder(dividingBy: cellHeight)
         if mode > cellHeight/2 {
             mode = -(cellHeight-mode)
@@ -25,7 +25,7 @@ extension DetailedUserViewController: UIScrollViewDelegate {
 
 extension DetailedUserViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return detailedUserNotesArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -49,6 +49,8 @@ class DetailedUserViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print(detailedUserNotesArray)
+        detailedUserTableView.tableFooterView = UIView()
+
         // Do any additional setup after loading the view.
     }
     

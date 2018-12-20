@@ -38,7 +38,7 @@ class SearchUserViewController: UIViewController {
     
     
     @IBAction func searchByUsernameButton(_ sender: Any) {
-        searchModel.loadNotesForOtherUser(username: "n0acar")
+        searchModel.loadNotesForOtherUser(username: usernameSearchBar.text!)
         
     }
     
@@ -49,6 +49,7 @@ class SearchUserViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! DetailedUserViewController
         vc.detailedUserNotesArray = searchModel.otherUserNotesArray
+        searchModel.otherUserNotesArray = []
     }
     
     
