@@ -12,6 +12,22 @@ import Parse
 //extension LoginViewController: NameModelDelegate {
 //}
 
+extension LoginViewController : UserModelDelegate {
+    func startLogin() {
+        self.present(loginAlert, animated: true)
+    }
+    func goToDeterminedScreen() {
+        DispatchQueue.main.async(){
+            self.performSegue(withIdentifier: "loginToApp", sender: self)
+        }
+        loginAlert.dismiss(animated: true, completion: nil)
+    }
+    func wrongPasswordReaction() {
+        loginAlert.dismiss(animated: true, completion: nil)
+        self.present(cannotLoginAlert, animated: true)
+    }
+    
+}
 class LoginViewController: UIViewController {
     
     
@@ -21,10 +37,15 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var logoTopConstraint: NSLayoutConstraint!
     let userModel = UserModel()
+    let loginAlert = UIAlertController(title: "Login", message: "Please, wait until login", preferredStyle: .alert)
+    let cannotLoginAlert = UIAlertController(title: "Wrong", message: "Wrong Username or Password", preferredStyle: .alert)
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardOnTap()
+        userModel.delegate = self
+        cannotLoginAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
@@ -46,6 +67,7 @@ class LoginViewController: UIViewController {
             print("performm")
             DispatchQueue.main.async(){
                 self.performSegue(withIdentifier: "loginToApp", sender: self)
+                
             }
         }
     }
@@ -53,30 +75,14 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginButton(_ sender: Any) {
         if !(UserNameText.text == nil || PasswordText.text == nil){
-            self.login(username: UserNameText.text!, password: PasswordText.text!)
-            print("if")
+            userModel.login(username: UserNameText.text!, password: PasswordText.text!)
         }
         else {
             //must bedeclared
-            print("else")
         }
     }
     
-    func login(username: String, password: String){
-        PFUser.logInWithUsername(inBackground: username, password: password) { (user, error) in
-            if user != nil {
-                // Do stuff after successful login.
-                print("Logged")
-                DispatchQueue.main.async(){
-                    self.performSegue(withIdentifier: "loginToApp", sender: self)
-                }
-            } else {
-                // The login failed. Check error to see why.
-                print(error as Any)
-                print("Not logged")
-            }
-        }
-    }
+    
     
     public func hideKeyboardOnTap() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.hideKeyboard))

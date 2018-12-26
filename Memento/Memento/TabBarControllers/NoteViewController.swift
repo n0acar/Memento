@@ -8,7 +8,15 @@
 
 import UIKit
 
-
+extension NoteViewController : NoteModelDelegate {
+    func changeMainPhoto(image: UIImage) {
+        mainPhotoImageView.image = image
+    }
+    func noteIsSaved() {
+        self.present(savedNoteAlert, animated: true)
+    }
+    
+}
 class NoteViewController: UIViewController {
     
     let noteModel = NoteModel()
@@ -16,14 +24,23 @@ class NoteViewController: UIViewController {
     @IBOutlet weak var noteArea: UITextView!
     @IBOutlet weak var hashtagLabel: UITextField!
     @IBOutlet weak var visibilitySwitch: UISwitch!
-    
+    @IBOutlet weak var mainPhotoImageView: UIImageView!
+    let savedNoteAlert = UIAlertController(title: "Saved", message: "Note is saved", preferredStyle: .alert)
     override func viewDidLoad() {
         super.viewDidLoad()
+        noteModel.delegate = self
+        savedNoteAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         // Do any additional setup after loading the view.
         self.hideKeyboardOnTap()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        noteModel.loadUserProfilePhoto()
+
+    }
+    
+    
     
     @objc func keyboardWillShow(notification: NSNotification) {
         if self.view.frame.origin.y == 0 && hashtagLabel.isEditing{
@@ -51,8 +68,10 @@ class NoteViewController: UIViewController {
     @IBAction func logoutPressed(_ sender: Any) {
         print("out")
         noteModel.logOut()
+        
         DispatchQueue.main.async(){
-            self.performSegue(withIdentifier: "logoutFromApp", sender: self)
+            //self.navigationController?.popToRootViewController(animated: true)
+            self.view.window!.rootViewController?.dismiss(animated: true, completion: nil)
         }
     }
     

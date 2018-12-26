@@ -9,18 +9,25 @@
 import Foundation
 import Parse
 
-//protocol UserModelDelegate {
-//}
+protocol UserModelDelegate {
+    func startLogin()
+    func goToDeterminedScreen()
+    func wrongPasswordReaction()
+}
 class UserModel {
+    
+    var delegate: UserModelDelegate?
+
     func login(username: String, password: String){
+        self.delegate?.startLogin()
         PFUser.logInWithUsername(inBackground: username, password: password) { (user, error) in
             if user != nil {
                 // Do stuff after successful login.
-                print("Logged")
+                self.delegate?.goToDeterminedScreen()
             } else {
                 // The login failed. Check error to see why.
+                self.delegate?.wrongPasswordReaction()
                 print(error as Any)
-                print("Not logged")
             }
         }
     }

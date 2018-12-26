@@ -11,19 +11,36 @@ import Parse
 
 protocol ProfileModelDelegate {
     func noteListLoaded()
+    func changeMainPhoto(image: UIImage)
 }
 
 class ProfileModel {
     
     var delegate: ProfileModelDelegate?
-    
+    let user = PFUser.current()!
     var notesArray : [Note] = []
     
     init () {
         loadNotesForCurrentUser()
     }
     
-    let user = PFUser.current()!
+    
+    func loadUserProfilePhoto(){
+        if user["profilePhoto"] != nil {
+        let userImageFile = user["profilePhoto"] as! PFFile
+        userImageFile.getDataInBackground { (imageData: Data?, error: Error?) in
+            if let error = error {
+                print(error.localizedDescription)
+            } else if let imageData = imageData {
+                let image = UIImage(data:imageData)
+                if image != nil {
+                    self.delegate?.changeMainPhoto(image: image!)
+                }
+            }
+        }
+        
+    }
+    }
     
     func loadNotesForCurrentUser() {
         let noteQuery = PFQuery(className:"Note")
@@ -46,9 +63,34 @@ class ProfileModel {
                         self.notesArray.append(Note(noteText: object["noteText"]! as! String, hashtag: object["hashtag"]! as! String, visibility: object["visibility"]! as! Bool, username: object["username"]! as! String))
                     }
                 }
+                self.notesArray.reverse()
                 self.delegate?.noteListLoaded()
             }
         }
+    }
+    
+    func searchForTag(notesArray: [Note], hashtag: String) -> [Note] {
+        var taggedNotesArray: [Note] = []
+        for note in notesArray {
+            if (note.hashtag == hashtag) {
+                taggedNotesArray.append(note)
+            }
+        }
+        return taggedNotesArray
+    }
+    
+    func changeSavePhoto(image: UIImage) {
+        let imageData = image.pngData()
+        if let imageData = imageData {
+            let profilePhoto = PFObject(className:"ProfilePhoto")
+            let imageFile = PFFile(name:"\(user["username"]!).png", data:imageData)
+            user["profilePhoto"] = imageFile
+            profilePhoto["photo"] = imageFile
+            profilePhoto["username"] = user["username"]!
+            user.saveInBackground()
+            profilePhoto.saveInBackground()
+        }
+        
     }
     
 }

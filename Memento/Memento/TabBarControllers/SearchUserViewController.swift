@@ -9,8 +9,16 @@
 import UIKit
 
 extension SearchUserViewController: SearchModelDelegate {
+    func startSearch() {
+        self.present(searchAlert, animated: true)
+    }
     func goToDeterminedScreen() {
         self.performSegue(withIdentifier: "searchByUsername", sender: self)
+        searchAlert.dismiss(animated: true, completion: nil)
+    }
+    func wrongUsernameReaction() {
+        searchAlert.dismiss(animated: true, completion: nil)
+        self.present(cannotSearchAlert, animated: true)
     }
     
     
@@ -23,12 +31,16 @@ class SearchUserViewController: UIViewController {
     
     @IBOutlet weak var usernameSearchBar: UISearchBar!
     
+    let searchAlert = UIAlertController(title: "Searching", message: "Searching", preferredStyle: .alert)
+    let cannotSearchAlert = UIAlertController(title: "Wrong Username", message: "No user is registered with this username", preferredStyle: .alert)
     let searchModel = SearchModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         searchModel.delegate = self
         print(searchModel.otherUserNotesArray)
         self.hideKeyboardOnTap()
+        cannotSearchAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+
         // Do any additional setup after loading the view.
     }
     
@@ -39,8 +51,11 @@ class SearchUserViewController: UIViewController {
     
     
     @IBAction func searchByUsernameButton(_ sender: Any) {
-        searchModel.loadNotesForOtherUser(username: usernameSearchBar.text!)
-        
+        if usernameSearchBar.text != nil {
+            searchModel.loadNotesForOtherUser(username: usernameSearchBar.text!)
+            searchModel.loadProfilePhoto(username: usernameSearchBar.text!)
+
+        }
     }
     
     @IBAction func searchByLocationButton(_ sender: Any) {
@@ -50,7 +65,9 @@ class SearchUserViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! DetailedUserViewController
         vc.detailedUserNotesArray = searchModel.otherUserNotesArray
+        vc.detailedProfilePhoto = searchModel.profilePhoto
         searchModel.otherUserNotesArray = []
+        searchModel.profilePhoto = UIImage(named: "logo")
     }
     
     public func hideKeyboardOnTap() {

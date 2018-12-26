@@ -45,13 +45,27 @@ extension DetailedUserViewController : UITableViewDataSource {
 class DetailedUserViewController: UIViewController {
 
     var detailedUserNotesArray: [Note] = []
+    var detailedProfilePhoto: UIImage?
     @IBOutlet weak var detailedUserTableView: UITableView!
+    
+    @IBOutlet weak var otherUserProfileImageView: UIImageView!
+    @IBOutlet weak var otherUserSearchBar: UISearchBar!
     override func viewDidLoad() {
         super.viewDidLoad()
         print(detailedUserNotesArray)
         detailedUserTableView.tableFooterView = UIView()
-
+        
         // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func searchOtherUserPressed(_ sender: Any) {
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if let detailedProfilePhoto = detailedProfilePhoto {
+            otherUserProfileImageView.image = detailedProfilePhoto
+            print("\(detailedProfilePhoto) nev")
+        }
     }
     
 
